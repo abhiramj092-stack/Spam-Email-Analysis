@@ -1,0 +1,49 @@
+Delivered-To: jacobcookofficial@gmail.com
+Received: by 2002:a17:522:5ac9:b0:645:e1dd:52fe with SMTP id e9csp183521pvk;
+        Wed, 28 Jan 2026 14:49:49 -0800 (PST)
+X-Received: by 2002:a05:6a21:6d9a:b0:35d:8ded:c580 with SMTP id adf61e73a8af0-39245b088c8mr1198376637.6.1769640589270;
+        Wed, 28 Jan 2026 14:49:49 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1769640589; cv=none;
+        d=google.com; s=arc-20240605;
+        b=GyX+c/vQPcHFXfBp5n3y83/jsfOq3U4oovL1n3hOaoeF3xroYOY3cgQSz7HXNeqJYj
+Return-Path: <bounce@vav.proo55.us.com>
+Received: from vav.proo55.us.com (vps-b3328616.vps.ovh.net. [141.95.0.46])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-c6426c4d813si6133441a12.128.2026.01.28.14.49.47
+        for <jacobcookofficial@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Wed, 28 Jan 2026 14:49:49 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce@vav.proo55.us.com designates 141.95.0.46 as permitted sender) smtp.mailfrom=bounce@vav.proo55.us.com;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@534617.vav.proo55.us.com header.s=smtp header.b=AXdOUFl6;
+       dkim=neutral (expired) header.i=@googlemail.com header.s=20230601 header.b=doulgfdp;
+       spf=pass (google.com: domain of bounce@vav.proo55.us.com designates 141.95.0.46 as permitted sender) smtp.mailfrom=bounce@vav.proo55.us.com;
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=smtp; d=534617.vav.proo55.us.com;
+Content-Type: text/html; charset="UTF-8"
+Mime-Version: 1.0
+Content-Transfer-Encoding: 8bit
+To: jacobcookofficial@gmail.com
+Auto-Submitted: auto-replied
+Message-ID: <69109263.170a0220.29f1ba.ca4a.GMR@mx.google.com>
+Date: Wed, 28 Jan 2026 22:49:43 +0000
+From: "OneCasino " <132784@534617.vav.proo55.us.com>
+Subject: Welcome gift inside: 50 spins waiting for you💰.944175#.
+X-Failed-Recipients: jacobcookofficial@google.com
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Your Spins Are Ready</title>
+  </head>
+  <body>
+    <h1>50 Spins On Us</h1>
+    <p>Welcome to OneCasino — quick signup, instant spins, real excitement.</p>
+    <p><a href="https://tinyurl.com/mrymsuhv">Start Spinning Now</a></p>
+    <p>• New players only<br>
+    • No deposit to unlock spins<br>
+    • Terms apply — check your region</p>
+    <p style="font-size:12px;">You are receiving this because you opted in to OneCasino updates. 
+    <a href="https://tinyurl.com/mrymsuhv">Unsubscribe</a> | 
+    <a href="https://tinyurl.com/mrymsuhv">Terms</a></p>
+  </body>
+</html>
