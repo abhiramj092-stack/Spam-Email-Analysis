@@ -32,7 +32,7 @@ Subject: Welcome gift inside: 50 spins waiting for you💰.944175#.
 X-Failed-Recipients: jacobcookofficial@google.com
 ```
 
-![MXToolbox "Headers Found" table listing all raw email headers extracted from the .eml file](screenshots/06-mxtoolbox-headers-found.png)
+![MXToolbox "Headers Found" table listing all raw email headers extracted from the .eml file](06-mxtoolbox-headers-found.png)
 *Figure 6 — Full parsed header table from MXToolbox's Analyze Headers tool, confirming the sender, Return-Path, DKIM domain, and SPF pass result.*
 
 **Key observations:**
@@ -42,14 +42,14 @@ X-Failed-Recipients: jacobcookofficial@google.com
 
 ## 2. DMARC / SPF / DKIM (MXToolbox)
 
-![MXToolbox header analysis summary showing DMARC not compliant, SPF and DKIM alignment/authentication all failed](screenshots/04-mxtoolbox-dmarc-spf-dkim-summary.png)
+![MXToolbox header analysis summary showing DMARC not compliant, SPF and DKIM alignment/authentication all failed](04-mxtoolbox-dmarc-spf-dkim-summary.png)
 *Figure 4 — MXToolbox delivery-information summary: DMARC non-compliant, SPF/DKIM alignment and authentication all failing.*
 
 - **DMARC:** No DMARC record found for either `534617.vav.proo55.us.com` or the organizational domain `proo55.us.com`. Without DMARC, there is no enforced policy telling receiving servers what to do with unauthenticated mail from this domain family.
 - **SPF:** `spf:vav.proo55.us.com` explicitly authorizes IP `141.95.0.46` — expected, since the spammer controls this DNS record.
 - **DKIM:** MXToolbox reports the DKIM signature as invalid / not properly aligned (`DKIM-Signature Domain ... is invalid`), and notes there must be at least one aligned DKIM signature for alignment — which is missing here.
 
-![MXToolbox SPF and DKIM detail view showing no DMARC record found for either the subdomain or organizational domain, and DKIM signature errors](screenshots/05-mxtoolbox-spf-dkim-details.png)
+![MXToolbox SPF and DKIM detail view showing no DMARC record found for either the subdomain or organizational domain, and DKIM signature errors](05-mxtoolbox-spf-dkim-details.png)
 *Figure 5 — Detailed SPF/DKIM/DMARC breakdown: no DMARC record at either the subdomain or organizational level, and DKIM signature/alignment errors.*
 
 **Conclusion:** the domain has weak/absent authentication hygiene (no DMARC), consistent with a burner sending domain spun up purely for a spam blast rather than a legitimate business.
@@ -66,7 +66,7 @@ abuse contact: abuse@ovh.net
 status:       ASSIGNED PA
 ```
 
-![WHOIS lookup for 141.95.0.46 showing OVH GmbH VPS hosting in Germany](screenshots/01-whois-ip.png)
+![WHOIS lookup for 141.95.0.46 showing OVH GmbH VPS hosting in Germany](01-whois-ip.png)
 *Figure 1 — WHOIS record for the sending IP, showing it belongs to an OVH GmbH VPS block in Germany.*
 
 - The IP belongs to **OVH GmbH**, a well-known low-cost/anonymous VPS hosting provider in Germany.
@@ -83,7 +83,7 @@ The email body contains a single obfuscated link reused for "Start Spinning Now,
 | 1 | 301 | `https://tinyurl.com/mrymsuhv` |
 | 2 | 200 (final) | `https://tinyurl.com/app/nospam/tinyurl.com/mrymsuhv` |
 
-![RedirectChecker trace showing the tinyurl.com/mrymsuhv link 301-redirecting to TinyUrl's own /app/nospam/ warning page](screenshots/02-redirect-chain.png)
+![RedirectChecker trace showing the tinyurl.com/mrymsuhv link 301-redirecting to TinyUrl's own /app/nospam/ warning page](02-redirect-chain.png)
 *Figure 2 — Redirect chain trace: the link resolves not to an external casino site, but to TinyUrl's own spam-interstitial path.*
 
 Interestingly, the final destination resolves to TinyUrl's own **`/app/nospam/`** interstitial/warning path rather than an external casino site — this typically happens when TinyUrl itself has flagged the destination link as spam/abuse and intercepted it with a warning page, rather than forwarding the visitor straight through.
@@ -94,7 +94,7 @@ Interestingly, the final destination resolves to TinyUrl's own **`/app/nospam/`*
 - All other engines (Abusix, Acronis, ADMINUSLabs, AlienVault, BitDefender, Blueliv, CINS Army, etc.) → **Clean**
 - Host: `tinyurl.com` (`104.18.111.161`, Cloudflare-fronted), Content-Type `text/html`.
 
-![VirusTotal detection results for the final URL, showing 1 of 95 vendors (SafeToOpen) flagging it as Phishing](screenshots/03-virustotal-detection.png)
+![VirusTotal detection results for the final URL, showing 1 of 95 vendors (SafeToOpen) flagging it as Phishing](03-virustotal-detection.png)
 *Figure 3 — VirusTotal scan: SafeToOpen flags the URL as Phishing while other vendors report it Clean.*
 
 **Conclusion:** Low but non-zero detection. One reputable engine (SafeToOpen) flags it as phishing; the fact that TinyUrl auto-routed the link to its own `/nospam/` warning page independently corroborates that TinyUrl's own abuse systems already consider this link suspicious.
@@ -135,4 +135,3 @@ Interestingly, the final destination resolves to TinyUrl's own **`/app/nospam/`*
 - Full parsed headers table — MXToolbox Analyze Headers (`screenshots/06-mxtoolbox-headers-found.png`)
 - Raw `.eml` source file (`sample1.eml`)
 
-All screenshots are stored in the [`screenshots/`](screenshots/) directory alongside this report.
